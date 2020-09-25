@@ -13,7 +13,10 @@ const config = {
         measurementId: "G-1L4LP1L51Z"
   };
 
-  export const createUserProfileDocument = async(userAuth, additionalData) => {
+  firebase.initializeApp(config);
+
+
+  export const createUserProfileDocument = async (userAuth, additionalData) => {
     if (!userAuth) return;
 
     const userRef = firestore.doc(`users/${userAuth.uid}`);
@@ -30,7 +33,7 @@ const config = {
           email,
           createdAt,
           ...additionalData
-        })
+        });
       } catch (error) {
         console.log('error creating user', error.message);
       }
@@ -39,11 +42,11 @@ const config = {
     return userRef;
 };
 
-  firebase.initializeApp(config);
+
 
 // export firebase auth and firestore
-  export const auth = firebase.auth();
-  export const firestore = firebase.firestore();
+export const auth = firebase.auth();
+export const firestore = firebase.firestore();
 
 // Google authentication, this gives acces to new GoogleAuthProvider class from auth library 
 const provider = new firebase.auth.GoogleAuthProvider();
