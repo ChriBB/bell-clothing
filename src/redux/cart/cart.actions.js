@@ -19,5 +19,5 @@ export const clearItemFromCart = item => ({
     payload: item
 });
 
-export default CartActionTypes;
+// export default CartActionTypes;
 

@@ -1,5 +1,6 @@
 const INITIAL_STATE = {
-    sections: [{
+    sections: [
+      {
         title: 'hats',
         imageUrl: 'https://i.ibb.co/cvpntL1/hats.png',
         id: 1,
